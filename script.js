@@ -1,18 +1,14 @@
 (() => {
   'use strict';
-
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
   /* ---------- Menu mobile ---------- */
   const burger = document.getElementById('burger');
   const nav = document.getElementById('nav');
-
   burger.addEventListener('click', () => {
     const isOpen = nav.classList.toggle('is-open');
     burger.setAttribute('aria-expanded', String(isOpen));
     burger.setAttribute('aria-label', isOpen ? 'Fermer le menu' : 'Ouvrir le menu');
   });
-
   nav.querySelectorAll('.nav__link').forEach(link => {
     link.addEventListener('click', () => {
       nav.classList.remove('is-open');
@@ -24,7 +20,6 @@
   /* ---------- Lien actif au scroll ---------- */
   const sections = document.querySelectorAll('main section[id], main#accueil');
   const navLinks = document.querySelectorAll('.nav__link');
-
   const setActiveLink = () => {
     let current = 'accueil';
     sections.forEach(section => {
@@ -37,7 +32,6 @@
   };
   document.addEventListener('scroll', setActiveLink, { passive: true });
   setActiveLink();
-
   /* ---------- Animation d'apparition au scroll ---------- */
   if (prefersReducedMotion) {
     document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
