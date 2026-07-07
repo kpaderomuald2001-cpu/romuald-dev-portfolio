@@ -35,7 +35,7 @@ Outils
 
 - Git / GitHub
 - Figma (conception UI/UX)
-- Visual Studio Code
+- Code studio (Android)
 
 ---
 
